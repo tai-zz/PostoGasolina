@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relatorio por Data</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <button id="themeToggle" class="theme-toggle secundario" type="button">Modo escuro</button>
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Sistema Posto</h2>
+      <button type="button" onclick="window.location.href='dashboard.html'">Dashboard</button>
+      <button class="secundario" type="button" id="btnImprimir">Imprimir</button>
+    </aside>
+
+    <main class="conteudo">
+      <h1>Relatorio por Data</h1>
+      <p class="subtitulo">Escolha uma data para gerar um resumo com tudo o que entrou no sistema naquele dia.</p>
+
+      <div class="formulario relatorio-filtros">
+        <input type="date" id="dataRelatorio">
+        <div class="acoes">
+          <button id="btnGerarRelatorio" type="button">Gerar relatorio</button>
+          <button class="secundario" type="button" onclick="window.location.href='dashboard.html'">Voltar</button>
+        </div>
+        <p id="mensagem" class="mensagem"></p>
+      </div>
+
+      <section id="relatorioConteudo" class="relatorio-area">
+        <div class="relatorio-header">
+          <div>
+            <p class="eyebrow">Resumo diario</p>
+            <h2 id="tituloRelatorio">Nenhum relatorio gerado</h2>
+          </div>
+          <p id="dataGeracao" class="subtitulo"></p>
+        </div>
+
+        <div class="relatorio-grid">
+          <article class="relatorio-card">
+            <div class="relatorio-card-topo">
+              <h3>Usuarios</h3>
+              <span id="totalUsuarios" class="contador">0</span>
+            </div>
+            <div id="listaUsuarios" class="relatorio-lista"></div>
+          </article>
+
+          <article class="relatorio-card">
+            <div class="relatorio-card-topo">
+              <h3>Postos</h3>
+              <span id="totalPostos" class="contador">0</span>
+            </div>
+            <div id="listaPostos" class="relatorio-lista"></div>
+          </article>
+
+          <article class="relatorio-card">
+            <div class="relatorio-card-topo">
+              <h3>Coletas de Preco</h3>
+              <span id="totalColetas" class="contador">0</span>
+            </div>
+            <div id="listaColetas" class="relatorio-lista"></div>
+          </article>
+
+          <article class="relatorio-card">
+            <div class="relatorio-card-topo">
+              <h3>Revendas</h3>
+              <span id="totalRevendas" class="contador">0</span>
+            </div>
+            <div id="listaRevendas" class="relatorio-lista"></div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../controller/relatorioController.js"></script>
+  <script src="../controller/themeController.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revenda</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <button id="themeToggle" class="theme-toggle secundario" type="button">Modo escuro</button>
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Sistema Posto</h2>
+      <button type="button" onclick="window.location.href='dashboard.html'">Dashboard</button>
+    </aside>
+
+    <main class="conteudo">
+      <h1>Revenda de Combustiveis</h1>
+
+      <div class="formulario">
+        <select id="postoId">
+          <option value="">Selecione o posto</option>
+        </select>
+        <input type="date" id="dataRevenda">
+        <select id="tipoCombustivel">
+          <option value="">Selecione o combustivel</option>
+          <option value="Gasolina comum">Gasolina comum</option>
+          <option value="Gasolina aditivada">Gasolina aditivada</option>
+          <option value="Etanol">Etanol</option>
+          <option value="Diesel">Diesel</option>
+        </select>
+        <input type="number" id="quantidade" step="0.01" min="0" placeholder="Quantidade">
+        <input type="number" id="valorTotal" step="0.01" min="0" placeholder="Valor total">
+
+        <div class="acoes">
+          <button id="btnSalvarRevenda" type="button">Salvar</button>
+          <button class="secundario" type="button" onclick="window.location.href='dashboard.html'">Voltar</button>
+        </div>
+
+        <p id="mensagem" class="mensagem"></p>
+      </div>
+    </main>
+  </div>
+
+  <script src="../controller/revendaController.js"></script>
+  <script src="../controller/themeController.js"></script>
+</body>
+</html>

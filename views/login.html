@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <button id="themeToggle" class="theme-toggle secundario" type="button">Modo escuro</button>
+  <div class="container">
+    <h1>Sistema Posto</h1>
+    <p class="subtitulo">Entre com seu email e senha para acessar o painel.</p>
+
+    <div class="formulario">
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="senha" placeholder="Senha">
+
+      <div class="acoes">
+        <button id="btnEntrar" type="button">Entrar</button>
+      </div>
+
+      <p id="mensagem" class="mensagem"></p>
+    </div>
+  </div>
+
+  <script src="../controller/loginController.js"></script>
+  <script src="../controller/themeController.js"></script>
+</body>
+</html>

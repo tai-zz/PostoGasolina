@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <button id="themeToggle" class="theme-toggle secundario" type="button">Modo escuro</button>
+  <div class="container">
+    <h1>Dashboard</h1>
+    <p class="subtitulo">Escolha uma das operacoes para continuar.</p>
+
+    <div class="menu">
+      <button onclick="window.location.href='cadastro-usuario.html'">Cadastro de Usuario</button>
+      <button onclick="window.location.href='cadastro-posto.html'">Cadastro de Posto</button>
+      <button onclick="window.location.href='coleta-preco.html'">Coleta de Preco</button>
+      <button onclick="window.location.href='revenda.html'">Revenda</button>
+      <button onclick="window.location.href='relatorio.html'">Relatorio por Data</button>
+      <button class="secundario" onclick="window.location.href='login.html'">Sair</button>
+    </div>
+  </div>
+  <script src="../controller/themeController.js"></script>
+</body>
+</html>

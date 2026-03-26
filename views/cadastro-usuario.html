@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Usuario</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <button id="themeToggle" class="theme-toggle secundario" type="button">Modo escuro</button>
+  <div class="container">
+    <h1>Cadastro de Usuario</h1>
+
+    <div class="formulario">
+      <input type="text" id="nome" placeholder="Nome">
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="senha" placeholder="Senha">
+
+      <select id="tipoUsuario">
+        <option value="">Selecione o tipo de usuario</option>
+        <option value="0">Comum</option>
+        <option value="1">Administrador</option>
+        <option value="2">Gerente</option>
+      </select>
+
+      <div class="acoes">
+        <button id="btnCadastrar" type="button">Cadastrar</button>
+        <button class="secundario" type="button" onclick="window.location.href='dashboard.html'">Voltar</button>
+      </div>
+
+      <p id="mensagem" class="mensagem"></p>
+    </div>
+  </div>
+
+  <script src="../controller/cadastroUsuarioController.js"></script>
+  <script src="../controller/themeController.js"></script>
+</body>
+</html>
