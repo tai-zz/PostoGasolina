@@ -1,2 +1,128 @@
-# PostoGasolina
-Sistema desktop desenvolvido para gerenciamento completo de postos de combustível, permitindo o controle de usuários, cadastro de postos, coleta de preços e registro de revendas de combustíveis.
+# Sistema Posto
+
+Sistema desktop para gerenciamento de posto de combustíveis, desenvolvido com Electron e PostgreSQL.
+
+## Sobre o projeto
+
+O **Sistema Posto** foi criado para facilitar o controle de informações operacionais de um posto de combustíveis, permitindo o cadastro e acompanhamento de dados importantes do dia a dia.
+
+A aplicação conta com interface desktop moderna, suporte a tema claro/escuro, geração de relatórios por data e exportação em PDF.
+
+## Funcionalidades
+
+- Login de usuário
+- Cadastro de usuários
+- Cadastro de postos
+- Registro de coleta de preços
+- Registro de revendas
+- Relatório por data
+- Geração de PDF para visualização e impressão
+- Alternância entre modo claro e modo escuro
+
+## Tecnologias utilizadas
+
+- Electron
+- Node.js
+- PostgreSQL
+- JavaScript
+- HTML
+- CSS
+
+## Estrutura do projeto
+
+```bash
+sistema-posto/
+├── controller/
+├── css/
+├── dao/
+├── database/
+├── service/
+├── util/
+├── views/
+├── main.js
+├── preload.js
+├── package.json
+Como executar o projeto
+1. Clone o repositório
+git clone <URL_DO_REPOSITORIO>
+cd sistema-posto
+2. Instale as dependências
+npm install
+3. Configure o banco PostgreSQL
+Crie um banco com o nome:
+
+postogasolina
+Configure também as credenciais do PostgreSQL no arquivo de conexão ou por variáveis de ambiente.
+
+Exemplo atual de configuração:
+
+DB_USER
+DB_HOST
+DB_NAME
+DB_PASSWORD
+DB_PORT
+Estrutura básica das tabelas
+Tabela usuario
+CREATE TABLE usuario (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(120) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    tipo_usuario INTEGER NOT NULL,
+    criado_em TIMESTAMP DEFAULT NOW()
+);
+Tabela posto
+CREATE TABLE posto (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(120) NOT NULL,
+    cnpj VARCHAR(20) NOT NULL UNIQUE,
+    endereco VARCHAR(200),
+    bairro VARCHAR(100),
+    cidade VARCHAR(100),
+    estado VARCHAR(2),
+    criado_em TIMESTAMP DEFAULT NOW()
+);
+Tabela revenda
+CREATE TABLE revenda (
+    id SERIAL PRIMARY KEY,
+    posto_id INTEGER NOT NULL,
+    data_revenda DATE NOT NULL,
+    tipo_combustivel VARCHAR(30) NOT NULL,
+    quantidade NUMERIC(10,2) NOT NULL,
+    valor_total NUMERIC(12,2) NOT NULL,
+    criado_em TIMESTAMP DEFAULT NOW(),
+    CONSTRAINT fk_revenda_posto
+        FOREIGN KEY (posto_id)
+        REFERENCES posto(id)
+        ON DELETE CASCADE
+);
+Tabela coleta_preco
+CREATE TABLE coleta_preco (
+    id SERIAL PRIMARY KEY,
+    posto_id INTEGER NOT NULL,
+    data_coleta DATE NOT NULL,
+    tipo_combustivel VARCHAR(30) NOT NULL,
+    preco NUMERIC(10,2) NOT NULL,
+    criado_em TIMESTAMP DEFAULT NOW(),
+    CONSTRAINT fk_coleta_posto
+        FOREIGN KEY (posto_id)
+        REFERENCES posto(id)
+        ON DELETE CASCADE
+);
+Como iniciar a aplicação
+npm start
+Relatórios
+O sistema possui uma tela de Relatório por Data, onde é possível:
+
+Selecionar uma data específica
+Visualizar os registros do dia
+Gerar um PDF automaticamente
+Abrir o PDF no visualizador padrão do sistema
+Melhorias futuras
+Controle de permissões por tipo de usuário
+Dashboard com indicadores
+Filtros avançados nos relatórios
+Exportação para Excel
+Empacotamento da aplicação para instalação
+Autor
+Desenvolvido por Tai 
