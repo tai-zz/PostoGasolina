@@ -30,6 +30,21 @@ A aplicação conta com interface desktop moderna, suporte a tema claro/escuro, 
 
 ## Estrutura do projeto
 
+# Como iniciar a aplicação
+npm start
+Relatórios
+O sistema possui uma tela de Relatório por Data, onde é possível:
+
+Selecionar uma data específica
+Visualizar os registros do dia
+Gerar um PDF automaticamente
+Abrir o PDF no visualizador padrão do sistema
+Melhorias futuras
+Controle de permissões por tipo de usuário
+Dashboard com indicadores
+Filtros avançados nos relatórios
+Exportação para Excel
+Empacotamento da aplicação para instalação
 ```bash
 sistema-posto/
 ├── controller/
@@ -109,20 +124,7 @@ CREATE TABLE coleta_preco (
         REFERENCES posto(id)
         ON DELETE CASCADE
 );
-Como iniciar a aplicação
-npm start
-Relatórios
-O sistema possui uma tela de Relatório por Data, onde é possível:
 
-Selecionar uma data específica
-Visualizar os registros do dia
-Gerar um PDF automaticamente
-Abrir o PDF no visualizador padrão do sistema
-Melhorias futuras
-Controle de permissões por tipo de usuário
-Dashboard com indicadores
-Filtros avançados nos relatórios
-Exportação para Excel
-Empacotamento da aplicação para instalação
-Autor
+
+
 Desenvolvido por Tai 
