@@ -59,7 +59,7 @@ sistema-posto/
 ├── package.json
 Como executar o projeto
 1. Clone o repositório
-git clone <URL_DO_REPOSITORIO>
+git clone <https://github.com/tai-zz/PostoGasolina>
 cd sistema-posto
 2. Instale as dependências
 npm install
