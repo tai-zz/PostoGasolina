@@ -29,6 +29,16 @@ A aplicação conta com interface desktop moderna, suporte a tema claro/escuro, 
 - CSS
 
 ## Estrutura do projeto
+<img width="1179" height="691" alt="image" src="https://github.com/user-attachments/assets/4ca2b1fe-526c-4169-8426-0b70f047e970" />
+<img width="1183" height="692" alt="image" src="https://github.com/user-attachments/assets/50fc464b-1035-40ea-afd7-6be5211b2300" />
+<img width="1182" height="694" alt="image" src="https://github.com/user-attachments/assets/302993ff-b02b-4018-83f0-be50a71613dd" />
+<img width="1178" height="689" alt="image" src="https://github.com/user-attachments/assets/32ffa576-8917-42a7-b2c4-4320075a0b67" />
+<img width="1169" height="573" alt="image" src="https://github.com/user-attachments/assets/6f6787ce-3279-4719-a2b8-c3406a2be9dc" />
+
+
+
+
+
 
 # Como iniciar a aplicação
 npm start
